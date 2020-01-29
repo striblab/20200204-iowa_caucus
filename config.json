@@ -1,0 +1,53 @@
+{
+  "about this file": "This document defines configuration for this project that is not content or copy.",
+  "projectIdentifier": "20200204-iowa-caucus",
+
+  "cms": {
+    "defaultArticleContentTemplateRewriteClass": "article-lcd-body-content",
+    "pages": [
+      
+      {
+        "id": "index",
+        "articleId": "NEEDS-ARTICLE-ID",
+        "lcd": "NEEDS-LCD-ID",
+        "default": true
+      }
+      
+    ]
+  },
+
+
+  "styles": {
+    "globals": [
+    ]
+  },
+  "js": {
+    "globals": [
+      "https://cdn.polyfill.io/v2/polyfill.min.js",
+      "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js",
+      "https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js",
+      "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"
+    ]
+  },
+  "publishToken": "68257112f15997f61b1cd255a4ec740e",
+  "publish": {
+    "default": {
+      "bucket": "static.startribune.com",
+      "path": "news/projects-staging/all/20200204-iowa-caucus",
+      "url": "http://static.startribune.com/news/projects-staging/all/20200204-iowa-caucus/",
+      "cacheSeconds": 30
+    },
+    "testing": {
+      "bucket": "stribtest-bucket",
+      "path": "news/projects/20200204-iowa-caucus",
+      "url": "https://s3.amazonaws.com/stribtest-bucket/news/projects/20200204-iowa-caucus/",
+      "cacheSeconds": 30
+    },
+    "production": {
+      "bucket": "static.startribune.com",
+      "path": "news/projects/all/20200204-iowa-caucus",
+      "url": "http://static.startribune.com/news/projects/all/20200204-iowa-caucus/",
+      "cacheSeconds": 600
+    }
+  }
+}

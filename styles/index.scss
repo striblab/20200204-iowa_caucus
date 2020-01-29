@@ -1,0 +1,472 @@
+/**
+ * Main style file for project.
+ * Uses SASS, specifically the SCSS syntax
+ * http://sass-lang.com/
+ */
+
+
+// Include strib-icons
+$strib-fonts-location: '//static.startribune.com/assets/libs/strib-icons/0.0.10/';
+@import '@striblab/strib-icons/build/strib-icons.scss';
+
+
+// Environment noting
+
+// Strib styles
+// https://github.com/striblab/strib-styles/blob/master/source/styles/_variables.scss
+
+// Assumed that this project lives within an existing page, so we add a
+// wrapper that is very specific and wrap our other styles in it so
+// that we don't affect other styles on the page.  Note that
+// this increases the CSS size, and it means strib-styles won't use
+// rems when it would otherwise.
+$selector-wrapper: '.strib-styles.ssa.ssb.ssc';
+@import '@striblab/strib-styles/source/styles/default-wrapper.scss';
+
+// Project specific styles.  Split styles into files per component
+#{$selector-wrapper} {
+  // Split your styles into multiple files so its easier to understand and change
+  @import 'shared/_project';
+}
+
+.environment-note {
+  display:none;
+}
+
+.canBlock {
+  display:inline-block;
+  width:48%;
+  height:250px;
+  margin-bottom:25px;
+  text-align:center;
+}
+
+.canLabel {
+  text-align:center;
+  font-weight:bold;
+  font-size:0.9em;
+  color:#ffffff;
+  border-radius: 5px;
+  padding: 0 7px;
+  margin-bottom: 3px;
+  font-family: "Benton Sans", Helvetica, Arial, sans-serif !important;
+
+}
+
+.tooltip {
+  background-color: white;
+  font-family: "Benton Sans", Helvetica, Arial, sans-serif !important;
+  height: auto;
+  width: auto;
+  padding: 10px;
+  border-radius: 0;
+  border: 1px solid black;
+  text-align:center;
+  font-size: 13px;
+}
+
+
+.legendary {
+  padding:4px;
+  color: #000000;
+  font-weight:bold;
+  border-radius: 5px;
+  padding: 0 7px;
+  margin-bottom: 3px;
+}
+
+.key_legend {
+  width:10px;
+  height:10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom:2px;
+}
+
+#tip {
+  min-height:200px;
+  display:none;
+}
+
+.votes {
+  clear:both !important;
+}
+
+.tipTitle {
+  text-align:center;
+}
+
+.tipRow {
+  clear:both;
+}
+
+.canName {
+  float:left;
+  margin-right:5px;
+}
+
+.votepct {
+  float:right;
+}
+
+.percent {
+  text-align:right;
+}
+
+.map {
+  width:800px;
+  height:600px;
+  margin-right:auto;
+  margin-left:auto;
+  display:inline-block;
+  text-align:center;
+  vertical-align:top;
+  position:relative;
+ }
+
+ .mapboxgl-canvas {
+   position:static !important;
+ }
+
+ .mapboxgl-ctrl-logo, .mapboxgl-ctrl-attrib, .mapboxgl-ctrl-geocoder--icon, .mapboxgl-ctrl-compass {
+   display:none !important;
+ }
+
+.geocoder, .mapboxgl-ctrl-geocoder {
+  width:800px;
+  min-width: 800px;
+  margin-right:auto;
+  margin-left:auto;
+  }
+
+  .mapboxgl-ctrl-geocoder {
+    width: 33.3333%;
+    font-size: 15px;
+    line-height: 20px;
+    width:100% !important;
+    max-width: 100%  !important;
+}
+
+.reset {
+  z-index:1;
+  position:absolute;
+  bottom:3px;
+  right:3px;
+}
+
+.reset:hover {
+  cursor:pointer;
+}
+
+.adjacent {
+  display:inline-block;
+  width:32%;
+  text-align:center;
+  margin-bottom:15px;
+
+}
+
+.adjacent iframe {
+  width:100%;
+  height:400 !important;
+}
+
+.maphead {
+  width: 100%;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 38px;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+/********** TOOLTIPS **********/
+
+.mapboxgl-popup {
+  position: absolute;
+  max-width: 160px;
+  background-color: white;
+  font-size:1em;
+  border: 1px solid #565656;
+  border-radius: 2px;
+  padding: 0.5em;
+  z-index:1000!important;
+
+  @media only screen and (max-width: 400px) {
+    display:none!important;
+  }
+}
+
+.mapboxgl-popup .mapboxgl-popup-tip {
+    border:none;
+}
+
+.mapboxgl-popup .mapboxgl-popup-content {
+    border:none;
+    margin:0 0 0 0;
+    padding:0 0 0 0;
+    box-shadow: none;
+    border-radius:0px;
+}
+
+.mapboxgl-popup h4 {
+  text-align:left;
+  padding-top: 0;
+  margin-top: 0;
+  font-size: 1.1em !important;
+  margin-bottom:3px;
+}
+
+.mapboxgl-popup .winner2016 {
+  font-size:0.9em;
+  text-align:left;
+  color:#686868;
+  margin-bottom:3px;
+}
+
+
+.mapboxgl-popup table {
+    margin-bottom:0.5em;
+}
+
+.mapboxgl-popup th {
+  font-size: 0.7em;
+  text-transform:uppercase;
+  font-weight:normal;
+}
+
+.mapboxgl-popup th.right {
+  text-align:right;
+}
+
+.mapboxgl-popup td {
+  font-size: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.4em;
+  padding-left:2px;
+}
+
+.mapboxgl-popup td.right {
+  text-align:right;
+}
+
+.mapboxgl-popup.hidden {
+  display: none;
+}
+
+.mapboxgl-popup .label-d {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 2px;
+  margin-right: 5px;
+  background-color:#0258A0;
+}
+
+.mapboxgl-popup .label-r {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 2px;
+  margin-right: 5px;
+  background-color:#C0272D;
+}
+
+.mapboxgl-popup .label-oth {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 2px;
+  margin-right: 5px;
+  background-color: #f7c272;
+}  
+
+/********** POPOVERS *********/
+
+#map-popover{
+  position:absolute;
+  width:100%;
+  bottom:0;
+  background-color:white;
+  padding:10px 10px 10px 10px;
+  border-radius: 15px 15px 0px 0px;
+  z-index:100;
+  visibility:hidden;
+  width:95%;
+  box-shadow: 0px -2px 5px #dfdfdf;
+  -moz-box-shadow: 0px -2px 5px #dfdfdf;
+  -webkit-box-shadow: 0px -2px 5px #dfdfdf;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  .label-d {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 2px;
+    margin-right: 5px;
+    background-color:#0258A0;
+  }
+
+  .label-r {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 2px;
+    margin-right: 5px;
+    background-color:#C0272D;
+  }  
+
+  .label-oth {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 2px;
+    margin-right: 5px;
+    background-color: #f7c272;
+  }  
+
+  table {
+      margin-bottom:0em;
+  }
+
+  th {
+    font-size: 0.9em;
+    text-transform:uppercase;
+    font-weight:normal;
+  }
+
+
+  td {
+    font-size: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.4em;
+  }
+
+  #popover-header {
+    margin-bottom:5px;
+  
+    h4 {
+      float:left;
+      text-align:left;
+      padding-top: 0;
+      margin-top: 0;
+      font-size: 1.1em !important;
+      margin-bottom:px;
+    }
+
+    #close {
+      width:10px;
+      float:right;
+      text-align:left;
+      padding-top: 0;
+      margin-top: 0;
+      margin-right:5px;
+      font-size: 1.1em !important;
+      margin-bottom:3px;
+    }
+  }
+}
+
+/********** LEGEND *********/
+
+#map-legend {
+  background-color:rgba(255, 255, 255, 0.7);;
+  position:absolute;
+  top:59px;
+  right: 50px;
+  width:202px;
+  font-size:11px;
+  line-height:11px;
+  padding: 7px 7px 7px 7px;
+  border: 2px solid #dfdfdf;
+  border-radius: 5px 5px 5px 5px;
+  font-family: "Benton Sans";
+  color:#303030;
+  text-align:center;
+  z-index:1;
+
+  @media only screen and (max-width: 500px) {
+    width:100%;
+    position:static;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    max-width:250px;
+    text-align:center;
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+
+}
+
+.legend-row {
+  height:14px;
+  margin-bottom:1px;
+}
+
+.legend-row .bar {
+  width:48%;
+  height:10px;
+  float:left;
+}
+
+.legend-row .label {
+  width:50%;
+  float:right;
+  text-align:left;
+  font-weight:normal;
+  line-height:12px;
+
+}
+
+.legend-footer {
+  display:inline-block;
+  width:100%;
+  margin-top:5px;
+
+  .label {
+    font-weight:normal;
+    line-height:12px;
+  }
+}
+
+.footer-left {
+  width:48%;
+  float:left;
+  text-align:center;
+}
+
+.footer-right {
+  width:48%;
+  float:right;
+  text-align:center;
+}
+
+.square {
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:5px;
+  height: 10px;
+  width: 10px;
+  background-color: #dfdfdf;
+}
+
+.blue {
+  background-image: linear-gradient(to right, white , #0258A0);
+}
+
+.purple {
+  background-image: linear-gradient(to right, white , #874e8e);
+}
+
+.red {
+  background-image: linear-gradient(to right, white , #C0272D);
+}
