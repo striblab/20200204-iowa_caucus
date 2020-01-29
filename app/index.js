@@ -324,16 +324,16 @@ const map2 = new mapboxgl.Map({
       mapboxgl: mapboxgl
   });
   
-  map.keyboard.disable();
-  map.scrollZoom.disable();
-  map.dragPan.disable();
+  map2.keyboard.disable();
+  map2.scrollZoom.disable();
+  map2.dragPan.disable();
   
   if (utils.isMobile()) {
-      map.dragRotate.disable();
-      map.touchZoomRotate.disableRotation();
+      map2.dragRotate.disable();
+      map2.touchZoomRotate.disableRotation();
     } else {
-      map.getCanvas().style.cursor = 'pointer';
-      map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
+      map2.getCanvas().style.cursor = 'pointer';
+      map2.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
     }
   
   document.getElementById('geocoder2').appendChild(geocoder2.onAdd(map2));

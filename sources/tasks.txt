@@ -1,11 +1,7 @@
-color fixes
+mobile fixes
 mapbox color legends
-layer switch
-
-mobile refinements
 mapbox tooltip design
-mapbox rollover fixes
 
+mapbox rollover fixes
 cj review
 cms:lcd setup
-repos, archives and commits
