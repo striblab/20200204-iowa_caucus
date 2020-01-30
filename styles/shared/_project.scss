@@ -678,9 +678,6 @@
      pointer-events:none !important;
    }
    
-   .tooltip {
-     width:180px !important;
-   }
    
    .byline {
        line-height:140%;
@@ -718,16 +715,7 @@
          }
        }
    
-   .legendary {
-       padding:4px;
-       color: #fff;
-       font-weight:bold;
-       border-radius: 5px;
-       padding: 0 7px;
-       margin-bottom: 3px;
-       display:inline-block;
-   }
-   
+
    .ind {
        fill: #fee090 !important;
        color: #fee090 !important;
@@ -1298,38 +1286,7 @@
      background-color: #9e003f;
      color: #fff;
    }
- 
-   /*BLUE-GREY SHADED RAMP*/
-   .grayblue1 {
-     fill: #DAE1E7;
-     background-color: #DAE1E7;
-   }
-   
-   .grayblue2 {
-     fill: #C6D1D9;
-     background-color: #C6D1D9;
-   }
-   
-   .grayblue3 {
-     fill: #A8B9C5;
-     background-color: #A8B9C5;
-   }
-   
-   .grayblue4 {
-     fill: #7F98AA;
-     background-color: #7F98AA;
-   }
-   
-   .grayblue5 {
-     fill: #556E7F;
-     background-color: #556E7F;
-   }
-   
-   .grayblue6 {
-     fill: #2C3942;
-     background-color: #2C3942;
-   }
-   
+
    /*PURPLE SHADED RAMP*/
    .purple5 {
      fill: #4A4061;
@@ -1587,17 +1544,17 @@
    }
    
    
-   .tooltip {
-     font-family: "Benton Sans", Helvetica, Arial, sans-serif;
-     background-color: white;
-     height: auto;
-     width: auto;
-     padding: 10px;
-     border-radius: 0;
-     border: 1px solid black;
-     font-size: 13px;
-     font-family: Arial;
-   }
+  //  .tooltip {
+  //    font-family: "Benton Sans", Helvetica, Arial, sans-serif;
+  //    background-color: white;
+  //    height: auto;
+  //    width: auto;
+  //    padding: 10px;
+  //    border-radius: 0;
+  //    border: 1px solid black;
+  //    font-size: 13px;
+  //    font-family: Arial;
+  //  }
    
    .states .active {
      fill: #333 !important;

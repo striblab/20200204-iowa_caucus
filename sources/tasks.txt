@@ -1,7 +1,0 @@
-mobile fixes
-mapbox color legends
-mapbox tooltip design
-
-mapbox rollover fixes
-cj review
-cms:lcd setup
