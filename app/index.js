@@ -96,7 +96,8 @@ import iowa from '../sources/iowa_pct_small.json';
 
 
 var centerD = [-93.395930, 42.172460];
-var zoom = 6.3;
+var zoom1 = 6.3;
+var zoom2 = 6.75;
 var minzoom = 6.3;
 
 var centerM = [-93.395930, 42.172460];
@@ -119,7 +120,7 @@ const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/startribune/ck1b7427307bv1dsaq4f8aa5h',
     center: centerD,
-    zoom: zoom,
+    zoom: zoom1,
     // minZoom: minzoom
 });
 
@@ -365,7 +366,7 @@ const map2 = new mapboxgl.Map({
     container: 'map2',
     style: 'mapbox://styles/startribune/ck1b7427307bv1dsaq4f8aa5h',
     center: centerD,
-    zoom: zoom,
+    zoom: zoom2,
     // minZoom: minzoom
 });
 
@@ -537,13 +538,13 @@ $(document).ready(function() {
         } else {
             map.flyTo({
                 center: centerD,
-                zoom: zoom,
-                minZoom: zoom
+                zoom: zoom1,
+                minZoom: zoom1
             });
             map2.flyTo({
                 center: centerD,
-                zoom: zoom,
-                minZoom: zoom
+                zoom: zoom2,
+                minZoom: zoom2
             });
         }
     });
@@ -551,11 +552,11 @@ $(document).ready(function() {
     $(".reset").on("click", function() {
         map.flyTo({
             center: centerD,
-            zoom: zoom
+            zoom: zoom1
         });
         map2.flyTo({
           center: centerD,
-          zoom: zoom
+          zoom: zoom2
       });
         $('.mapboxgl-ctrl-geocoder--input').val('');
         $('.mapboxgl-marker').hide();

@@ -110,9 +110,20 @@ $selector-wrapper: '.strib-styles.ssa.ssb.ssc';
   }
   
 
-.map {
+#map {
   width:800px;
   height:600px;
+  margin-right:auto;
+  margin-left:auto;
+  display:inline-block;
+  text-align:center;
+  vertical-align:top;
+  position:relative;
+ }
+
+ #map2 {
+  width:1200px;
+  height:700px;
   margin-right:auto;
   margin-left:auto;
   display:inline-block;
