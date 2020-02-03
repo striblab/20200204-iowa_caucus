@@ -97,7 +97,7 @@ import iowa from '../sources/iowa_pct_small.json';
 
 var centerD = [-93.395930, 42.172460];
 var zoom1 = 6.3;
-var zoom2 = 6.75;
+var zoom2 = 6.65;
 var minzoom = 6.3;
 
 var centerM = [-93.395930, 42.172460];
@@ -513,13 +513,13 @@ $(document).ready(function() {
     } else {
         map.flyTo({
             center: centerD,
-            zoom: zoom,
-            minZoom: zoom
+            zoom: zoom1,
+            minZoom: zoom1
         });
         map2.flyTo({
             center: centerD,
-            zoom: zoom,
-            minZoom: zoom
+            zoom: zoom2,
+            minZoom: zoom2
         });
     }
 

@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 import * as d3tooltip from 'd3-tooltip';
 import * as topojson from 'topojson';
 import iacounties from '../sources/ia_counties.json';
+import countiesVotes from '../sources/county_votes.json';
 
 class Map {
 
@@ -13,7 +14,7 @@ class Map {
         this.g = this.svg.append("g");
         this.zoomed = false;
         this.scaled = $(target).width() / 520;
-        this.colorScale = ['#8CBF82','#DEA381','#80ADAD','#7D739C','#F2614C','#636363','##969696','#969696','#969696','#969696','#969696','#969696']
+        this.colorScale = ['#8CBF82','#DEA381','#80ADAD','#7D739C','#F2614C','#636363','#969696','#969696','#969696','#969696','#969696','#969696']
     }
 
     /********** PRIVATE METHODS **********/
@@ -46,6 +47,10 @@ class Map {
 
         var svg = d3.select(self.target + " svg").attr("width", width).attr("height", height);
         var tooltip = d3tooltip(d3);
+
+        var countyData = countiesVotes.counties;
+
+
 
         // self._render_legend();
 
@@ -124,10 +129,24 @@ class Map {
             .style("stroke-width", '1')
             .style("stroke", "#ffffff")
             .style("fill", function(d) {
-                return self.colorScale[self.candidate];
+
+                var colorGradient = d3.scaleLinear()
+                .domain([0, 1])
+                .range(['#ffffff',self.colorScale[self.candidate]]);
+                
+                for (var i=0; i < countyData.length; i++){
+                    var resultsGradient = [countyData[i].SANDERS_PCT,countyData[i].BIDEN_PCT,countyData[i].KLOBUCHAR_PCT,countyData[i].WARREN_PCT,countyData[i].BUTTIGIEG_PCT,countyData[i].YANG_PCT,countyData[i].STEYER_PCT,countyData[i].BLOOMBERG_PCT,countyData[i].PATRICK_PCT,countyData[i].GABBARD_PCT,countyData[i].BENNET_PCT,countyData[i].DELANEY_PCT]
+
+                    if (countyData[i].COUNTYNS == d.properties.COUNTYNS) {
+                        return colorGradient(resultsGradient[self.candidate]);
+                    }
+
+                }
+                return '#000000';
+                
             })
             .call(tooltip(function(d, i) {
-                return "<div class='countyName'>" + d.properties.NAMELSAD + "</div><div class='number'><span class='legendary' style='color; background-color:" + self.colorScale[self.candidate] + ";'>VOTES</div>";
+                return "<div class='countyName'>" + d.properties.NAMELSAD + "</div>";
               }));
 
 
