@@ -29,6 +29,11 @@ $selector-wrapper: '.strib-styles.ssa.ssb.ssc';
   @import 'shared/_project';
 }
 
+.content-scroll {
+  max-width: 100% !important;
+  margin: auto;
+}
+
 .environment-note {
   display:none;
 }

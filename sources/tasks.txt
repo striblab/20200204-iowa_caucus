@@ -1,4 +1,0 @@
-precinct results
-county results
-map tilts
-colors
