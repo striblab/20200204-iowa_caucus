@@ -59,7 +59,7 @@ if ($("#mainslide").width() < 520) {
 
 const candidates = ['SANDERS', 'BIDEN', 'KLOBUCHAR', 'WARREN', 'BUTTEGIEG', 'YANG', 'STEYER', 'BLOOMBBERG', 'PATRICK', 'GABBARD', 'BENNET', 'DELANEY'];
 
-const colors = ['#8CBF82', '#DEA381', '#80ADAD', '#7D739C', '#F2614C', '#636363', '#969696', '#969696', '#969696', '#969696', '#969696', '#969696'];
+const colors = ['#8CBF82','#415B46','#80ADAD','#7D739C','#379B9B','#252525','#252525','#969696','#969696','#969696','#969696','#969696'];
 
 
 
@@ -175,50 +175,50 @@ map.on('load', function() {
         }
     }, 'settlement-label');
 
-if ($("#mainslide").width() > 520) {
-    map.addLayer({
-        'id': 'precincts-highlighted1',
-        'type': 'fill',
-        'source': 'iowa',
-        'paint': {
-            'fill-outline-color': '#333333',
-            'fill-color': 'rgba(0,0,0,0)',
-            'fill-opacity': 1
-        },
-        // 'filter': ['in', 'DISTRICT', '']
-    }, 'settlement-label');
+// if ($("#mainslide").width() > 520) {
+//     map.addLayer({
+//         'id': 'precincts-highlighted1',
+//         'type': 'fill',
+//         'source': 'iowa',
+//         'paint': {
+//             'fill-outline-color': '#333333',
+//             'fill-color': 'rgba(0,0,0,0)',
+//             'fill-opacity': 1
+//         },
+//         // 'filter': ['in', 'DISTRICT', '']
+//     }, 'settlement-label');
 
-    map.on('mousemove', function(e) {
-        var features = map.queryRenderedFeatures(e.point, {
-            layers: ['precincts-highlighted1']
-        });
-        // Change the cursor style as a UI indicator.
-        map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+//     map.on('mousemove', function(e) {
+//         var features = map.queryRenderedFeatures(e.point, {
+//             layers: ['precincts-highlighted1']
+//         });
+//         // Change the cursor style as a UI indicator.
+//         map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
 
-        if (!features.length) {
-            popup.remove();
-            return;
-        }
+//         if (!features.length) {
+//             popup.remove();
+//             return;
+//         }
 
-        var feature = features[0];
+//         var feature = features[0];
 
-        var description = "<div class='tipmame'>" + feature.properties.NAME + "</div> \
-        <div class='line'> \
-            <div class='type'>" + feature.properties.results_WINNER + "</div>\
-            <div class='num'>" + d3.format(".0%")(feature.properties.results_WINNER_PCT) + "</div> \
-        </div> \
-        <div class='line'> \
-            <div class='type'>Total</div>\
-            <div class='num'>" + d3.format(",")(feature.properties.results_TOTAL_VOTES) + "</div> \
-        </div>";
+//         var description = "<div class='tipmame'>" + feature.properties.NAME + "</div> \
+//         <div class='line'> \
+//             <div class='type'>" + feature.properties.results_WINNER + "</div>\
+//             <div class='num'>" + d3.format(".0%")(feature.properties.results_WINNER_PCT) + "</div> \
+//         </div> \
+//         <div class='line'> \
+//             <div class='type'>Total</div>\
+//             <div class='num'>" + d3.format(",")(feature.properties.results_TOTAL_VOTES) + "</div> \
+//         </div>";
 
-        // Populate the popup and set its coordinates
-        // based on the feature found.
-        popup.setLngLat(e.lngLat)
-            .setHTML(description)
-            .addTo(map);
-    });
-}
+//         // Populate the popup and set its coordinates
+//         // based on the feature found.
+//         popup.setLngLat(e.lngLat)
+//             .setHTML(description)
+//             .addTo(map);
+//     });
+// }
 
 });
 
@@ -314,57 +314,57 @@ map2.on('load', function() {
     }, 'settlement-label');
 
 
-if ($("#mainslide").width() > 520) {
-    map2.addLayer({
-      'id': 'precincts-highlighted2',
-      'type': 'fill',
-      'source': 'iowa',
-      'paint': {
-          'fill-outline-color': '#333333',
-          'fill-color': 'rgba(0,0,0,0)',
-          'fill-opacity': 1
-      },
-      // 'filter': ['in', 'DISTRICT', '']
-  }, 'settlement-label');
+// if ($("#mainslide").width() > 520) {
+//     map2.addLayer({
+//       'id': 'precincts-highlighted2',
+//       'type': 'fill',
+//       'source': 'iowa',
+//       'paint': {
+//           'fill-outline-color': '#333333',
+//           'fill-color': 'rgba(0,0,0,0)',
+//           'fill-opacity': 1
+//       },
+//       // 'filter': ['in', 'DISTRICT', '']
+//   }, 'settlement-label');
 
 
 
-    var popup2 = new mapboxgl.Popup({
-      closeButton: false,
-      closeOnClick: false
-    });
+//     var popup2 = new mapboxgl.Popup({
+//       closeButton: false,
+//       closeOnClick: false
+//     });
 
-    map2.on('mousemove', function(e) {
-        var features = map2.queryRenderedFeatures(e.point, {
-            layers: ['precincts-highlighted2']
-        });
-        // Change the cursor style as a UI indicator.
-        map2.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+//     map2.on('mousemove', function(e) {
+//         var features = map2.queryRenderedFeatures(e.point, {
+//             layers: ['precincts-highlighted2']
+//         });
+//         // Change the cursor style as a UI indicator.
+//         map2.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
 
-        if (!features.length) {
-            popup2.remove();
-            return;
-        }
+//         if (!features.length) {
+//             popup2.remove();
+//             return;
+//         }
 
-        var feature = features[0];
+//         var feature = features[0];
 
-        var description = "<div class='tipmame'>" + feature.properties.NAME + "</div> \
-        <div class='line'> \
-            <div class='type'>Klobuchar</div>\
-            <div class='num'>" + d3.format(".0%")(feature.properties.results_KLOBUCHAR_PCT) + "</div> \
-        </div> \
-        <div class='line'> \
-            <div class='type'>Total</div>\
-            <div class='num'>" + d3.format(",")(feature.properties.results_TOTAL_VOTES) + "</div> \
-        </div>";
+//         var description = "<div class='tipmame'>" + feature.properties.NAME + "</div> \
+//         <div class='line'> \
+//             <div class='type'>Klobuchar</div>\
+//             <div class='num'>" + d3.format(".0%")(feature.properties.results_KLOBUCHAR_PCT) + "</div> \
+//         </div> \
+//         <div class='line'> \
+//             <div class='type'>Total</div>\
+//             <div class='num'>" + d3.format(",")(feature.properties.results_TOTAL_VOTES) + "</div> \
+//         </div>";
 
-        // Populate the popup and set its coordinates
-        // based on the feature found.
-        popup2.setLngLat(e.lngLat)
-            .setHTML(description)
-            .addTo(map2);
-    });
-}
+//         // Populate the popup and set its coordinates
+//         // based on the feature found.
+//         popup2.setLngLat(e.lngLat)
+//             .setHTML(description)
+//             .addTo(map2);
+//     });
+// }
 
 
 });
