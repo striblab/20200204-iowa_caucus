@@ -14,7 +14,7 @@ class Map {
         this.g = this.svg.append("g");
         this.zoomed = false;
         this.scaled = $(target).width() / 520;
-        this.colorScale = ['#8CBF82','#415B46','#80ADAD','#7D739C','#379B9B','#252525','#252525','#969696','#969696','#969696','#969696','#969696']
+        this.colorScale = ['#8CBF82','#415B46','#556E7F','#7D739C','#379B9B','#252525','#252525','#969696','#969696','#969696','#969696','#969696']
     }
 
     /********** PRIVATE METHODS **********/
