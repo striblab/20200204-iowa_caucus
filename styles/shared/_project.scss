@@ -6,16 +6,6 @@
 //map styles
 
   
-  .city-label {
-      font-size: 8px !important;
-      margin-left: 3px !important;
-      text-anchor: left !important;
-      stroke:#333333 !important;
-      stroke-width:1px !important;
-      font-weight:normal;
-      pointer-events:none !important;
-      display:none !important;
-  }
   
   .mark {
       stroke:#333333 !important;
@@ -224,6 +214,7 @@
  
      tr.party-dem,
      tr.party-dfl {
+      border-left: 5px solid #333333;
        td.winner span,
        td.bar span.pctBar {
          background-color: #333333;
@@ -238,6 +229,8 @@
      }
    
      tr.party-dem1 {
+      border-left: 10px solid #B6AED4;
+
        td.winner span,
        td.bar span.pctBar {
          background-color: #B6AED4;
@@ -252,9 +245,10 @@
      }
    
      tr.party-dem2 {
+      border-left: 10px solid #C0FBFC;
        td.winner span,
        td.bar span.pctBar {
-         background-color: #DEA381;
+         background-color: #C0FBFC;
        }
    
        td.winner span.check {
@@ -266,23 +260,25 @@
      }
    
      tr.party-dem3 {
+      border-left: 10px solid #B6E3A6;
        td.winner span,
        td.bar span.pctBar {
-         background-color: #8CBF82;
+         background-color: #B6E3A6;
        }
    
        td.winner span.check {
          font-family:"Popular";
          font-weight:bold;
          color: #333333;
-         background-color: #8CBF82;
+         background-color: #f5f5f5;
        }
      }
    
      tr.party-dem4 {
+      border-left: 10px solid #7E9181;
        td.winner span,
        td.bar span.pctBar {
-         background-color: #C2655F;
+         background-color: #7E9181;
        }
    
        td.winner span.check {
@@ -294,9 +290,10 @@
      }
 
      tr.party-dem5 {
+      border-left: 10px solid #556E7F;
       td.winner span,
       td.bar span.pctBar {
-        background-color: #80ADAD;
+        background-color: #556E7F;
       }
   
       td.winner span.check {
@@ -306,8 +303,24 @@
         background-color: #f5f5f5;
       }
     }
+
+    tr.party-dem6 {
+      border-left: 10px solid #252525;
+      td.winner span,
+      td.bar span.pctBar {
+        background-color: #252525;
+      }
+  
+      td.winner span.check {
+        font-family:"Popular";
+        font-weight:bold;
+        color: #333333;
+        background-color: #252525;
+      }
+    }
    
      tr.party-null {
+      // border-left: 10px solid #aaaaaa;
        td.winner span,
        td.bar span.pctBar {
          background-color: #aaaaaa;
@@ -315,6 +328,7 @@
      }
  
      tr.party-rep {
+      border-left: 10px solid #c0272d;
        td.winner span,
        td.bar span.pctBar {
          background-color: #c0272d;
@@ -1149,82 +1163,82 @@
      background-color: #4C4C39;
    }
    
-   /*RED SHADED RAMP*/
-   .red1 {
-     fill: #F2D2C7;
-     background-color: #F2D2C7;
+   /*AQUA SHADED RAMP*/
+   .aqua1 {
+     fill: #EDFDFD;
+     background-color: #EDFDFD;
    }
    
-   .red2 {
-     fill: #F2BAAE;
-     background-color: #F2BAAE;
+   .aqua2 {
+     fill: #BAF1F1;
+     background-color: #BAF1F1;
    }
    
-   .red3 {
-     fill: #F2614C;
-     background-color: #F2614C;
+   .aqua3 {
+     fill: #88DDDD;
+     background-color: #88DDDD;
    }
    
-   .red4 {
-     fill: #C2655F;
-     background-color: #C2655F;
+   .aqua4 {
+     fill: #5CC0C0;
+     background-color: #5CC0C0;
    }
    
-   .red5 {
-     fill: #9E403C;
-     background-color: #9E403C;
+   .aqua5 {
+     fill: #379B9B;
+     background-color: #379B9B;
    }
    
-   /*ORANGE SHADED RAMP*/
-   .orange1 {
-     fill: #F2E0C7;
-     background-color: #F2E0C7;
+   /*TEAL SHADED RAMP*/
+   .teal1 {
+     fill: #CED3CF;
+     background-color: #CED3CF;
    }
    
-   .orange2 {
-     fill: #F2C9AC;
-     background-color: #F2C9AC;
+   .teal2 {
+     fill: #A2AFA5;
+     background-color: #A2AFA5;
    }
    
-   .orange3 {
-     fill: #DEA381;
-     background-color: #DEA381;
+   .teal3 {
+     fill: #7E9181;
+     background-color: #7E9181;
    }
    
-   .orange4 {
-     fill: #C28059;
-     background-color: #C28059;
+   .teal4 {
+     fill: #5F7763;
+     background-color: #5F7763;
    }
    
-   .orange5 {
-     fill: #8F4B31;
-     background-color: #8F4B31;
+   .teal5 {
+     fill: #415B46;
+     background-color: #415B46;
    }
    
    /*BLUE SHADED RAMP*/
    .blue1 {
-     fill: #D1E6E1;
-     background-color: #D1E6E1;
+     fill: #DAE1E7;
+     background-color: #DAE1E7;
    }
    
    .blue2 {
-     fill: #A7E6E3;
-     background-color: #A7E6E3;
+     fill: #C6D1D9;
+     background-color: #C6D1D9;
    }
    
    .blue3 {
-     fill: #80ADAD;
-     background-color: #80ADAD;
+     fill: #A8B9C5;
+     background-color: #A8B9C5;
    }
    
    .blue4 {
-     fill: #3580A3;
-     background-color: #3580A3;
+     fill: #7F98AA;
+     background-color: #7F98AA;
    }
    
    .blue5 {
-     fill: #0D4673;
-     background-color: #0D4673;
+     fill: #556E7F;
+     background-color: #556E7F;
    }
    
    /*GREEN SHADED RAMP*/

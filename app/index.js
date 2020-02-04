@@ -31,78 +31,27 @@ utils.documentReady(() => {
 
 
 
-/**
- * Adding Svelte templates in the client
- * ---------------------------------
- * We can bring in the same Svelte templates that we use
- * to render the HTML into the client for interactivity.  The key
- * part is that we need to have similar data.
- *
- * First, import the template.  This is the main one, and will
- * include any other templates used in the project.
- *
- *   `import Content from '../templates/_index-content.svelte.html';`
- *
- * Get the data parts that are needed.  There are two ways to do this.
- * If you are using the buildData function to get data, then add make
- * sure the config for your data has a `local: "content.json"` property
- *
- *  1. For smaller datasets, just import them like other files.
- *     `import content from '../assets/data/content.json';`
- *  2. For larger data points, utilize window.fetch.
- *     `let content = await (await window.fetch('../assets/data/content.json')).json();`
- *
- * Once you have your data, use it like a Svelte component:
- *
- * utils.documentReady(() => {
- *   const app = new Content({
- *     target: document.querySelector('.article-lcd-body-content'),
- *     hydrate: true,
- *     data: {
- *       content
- *     }
- *   });
- * });
- */
-
-
-
-// Common code to get svelte template loaded on the client and hack-ishly
-// handle sharing
-//
-// import Content from '../templates/_index-content.svelte.html';
-//
-// utils.documentReady(() => {
-//   // Deal with share place holder (remove the elements, then re-attach
-//   // them in the app component)
-//   const attachShare = utils.detachAndAttachElement('.share-placeholder');
-//
-//   // Main component
-//   const app = new Content({
-//     target: document.querySelector('.article-lcd-body-content'),
-//     hydrate: true,
-//     data: {
-//       attachShare
-//     }
-//   });
-// });
-
 import Map from './tinymaps.js';
-
 import * as d3 from 'd3';
-
 import iowa from '../sources/iowa_pct_small.json';
-// import iowa_all from '../sources/iowa_pct_all.json';
 
 
 var centerD = [-93.395930, 42.172460];
 var zoom1 = 6.3;
 var zoom2 = 6.65;
-var minzoom = 6.3;
+
 
 var centerM = [-93.395930, 42.172460];
 var zoomM = 5.6;
 
+
+if ($("#mainslide").width() < 520) {
+    var minzoom1 = zoomM;
+    var minzoom2 = zoomM;
+} else {
+    var minzoom1 = zoom1;
+    var minzoom2 = zoom2;
+}
 
 // const colorScale = d3.scaleOrdinal()
 //             .domain(['SANDERS', 'BIDEN', 'KLOBUCHAR', 'WARREN', 'BUTTEGIEG', 'YANG', 'STEYER', 'BLOOMBBERG', 'PATRICK', 'GABBARD', 'BENNET', 'DELANEY'])
@@ -121,7 +70,7 @@ const map = new mapboxgl.Map({
     style: 'mapbox://styles/startribune/ck1b7427307bv1dsaq4f8aa5h',
     center: centerD,
     zoom: zoom1,
-    // minZoom: minzoom
+    minZoom: minzoom1
 });
 
 
@@ -150,7 +99,7 @@ let geocoder = new MapboxGeocoder({
 
 map.keyboard.disable();
 map.scrollZoom.disable();
-map.dragPan.disable();
+// map.dragPan.disable();
 // map.boxZoom.disable();
 
 if (utils.isMobile()) {
@@ -222,11 +171,11 @@ map.on('load', function() {
             ],
             'fill-opacity': 0.75,
             'fill-antialias': true,
-            'fill-outline-color': '#ffffff'
+            'fill-outline-color': '#333333'
         }
     }, 'settlement-label');
 
-
+if ($("#mainslide").width() > 520) {
     map.addLayer({
         'id': 'precincts-highlighted1',
         'type': 'fill',
@@ -238,102 +187,6 @@ map.on('load', function() {
         },
         // 'filter': ['in', 'DISTRICT', '']
     }, 'settlement-label');
-
-    // canvas.addEventListener('mousedown', mouseDown, true);
-
-    // function mousePos(e) {
-    //     var rect = canvas.getBoundingClientRect();
-    //     return new mapboxgl.Point(
-    //         e.clientX - rect.left - canvas.clientLeft,
-    //         e.clientY - rect.top - canvas.clientTop
-    //     );
-    // }
-
-    // function mouseDown(e) {
-    //   // Continue the rest of the function if the shiftkey is pressed.
-    //   // if (!(e.shiftKey && e.button === 0)) return;
-
-    //     // Disable default drag zooming when the shift key is held down.
-    //     map.dragPan.disable();
-
-    //     // Call functions for the following events
-    //     document.addEventListener('mousemove', onMouseMove);
-    //     document.addEventListener('mouseup', onMouseUp);
-    //     document.addEventListener('keydown', onKeyDown);
-
-    //     // Capture the first xy coordinates
-    //     start = mousePos(e);
-    // }
-
-    // function onMouseMove(e) {
-    //     // Capture the ongoing xy coordinates
-    //     current = mousePos(e);
-
-    //     // Append the box element if it doesnt exist
-    //     if (!box) {
-    //         box = document.createElement('div');
-    //         box.classList.add('boxdraw');
-    //         canvas.appendChild(box);
-    //     }
-
-    //     var minX = Math.min(start.x, current.x),
-    //         maxX = Math.max(start.x, current.x),
-    //         minY = Math.min(start.y, current.y),
-    //         maxY = Math.max(start.y, current.y);
-
-    //     // Adjust width and xy position of the box element ongoing
-    //     var pos = 'translate(' + minX + 'px,' + minY + 'px)';
-    //     box.style.transform = pos;
-    //     box.style.WebkitTransform = pos;
-    //     box.style.width = maxX - minX + 'px';
-    //     box.style.height = maxY - minY + 'px';
-    // }
-
-    // function onMouseUp(e) {
-    //     // Capture xy coordinates
-    //     finish([start, mousePos(e)]);
-    // }
-
-    // function onKeyDown(e) {
-    //     // If the ESC key is pressed
-    //     if (e.keyCode === 27) finish();
-    // }
-
-    // function finish(bbox) {
-    //     // Remove these events now that finish has been called.
-    //     document.removeEventListener('mousemove', onMouseMove);
-    //     document.removeEventListener('keydown', onKeyDown);
-    //     document.removeEventListener('mouseup', onMouseUp);
-
-    //     if (box) {
-    //         box.parentNode.removeChild(box);
-    //         box = null;
-    //     }
-
-    //     // If bbox exists. use this value as the argument for `queryRenderedFeatures`
-    //     if (bbox) {
-    //         var features = map.queryRenderedFeatures(bbox, {
-    //             layers: ['iowa-layer1']
-    //         });
-
-    //         // Run through the selected features and set a filter
-    //         // to match features with unique FIPS codes to activate
-    //         // the `counties-highlighted` layer.
-    //         var filter = features.reduce(
-    //             function(memo, feature) {
-    //                 memo.push(feature.properties.DISTRICT);
-    //                 return memo;
-    //             },
-    //             ['in', 'DISTRICT']
-    //         );
-
-    //         map.setFilter('precincts-highlighted1', filter);
-    //     }
-
-    //     map.dragPan.enable();
-    // }
-
-
 
     map.on('mousemove', function(e) {
         var features = map.queryRenderedFeatures(e.point, {
@@ -349,7 +202,15 @@ map.on('load', function() {
 
         var feature = features[0];
 
-        var description = "<div>" + feature.properties.NAME + "</div><div>" + feature.properties.results_WINNER + "</div><div>Total votes: " + d3.format(",")(feature.properties.results_TOTAL_VOTES) + "</div>";
+        var description = "<div class='tipmame'>" + feature.properties.NAME + "</div> \
+        <div class='line'> \
+            <div class='type'>" + feature.properties.results_WINNER + "</div>\
+            <div class='num'>" + d3.format(".0%")(feature.properties.results_WINNER_PCT) + "</div> \
+        </div> \
+        <div class='line'> \
+            <div class='type'>Total</div>\
+            <div class='num'>" + d3.format(",")(feature.properties.results_TOTAL_VOTES) + "</div> \
+        </div>";
 
         // Populate the popup and set its coordinates
         // based on the feature found.
@@ -357,6 +218,7 @@ map.on('load', function() {
             .setHTML(description)
             .addTo(map);
     });
+}
 
 });
 
@@ -367,7 +229,7 @@ const map2 = new mapboxgl.Map({
     style: 'mapbox://styles/startribune/ck1b7427307bv1dsaq4f8aa5h',
     center: centerD,
     zoom: zoom2,
-    // minZoom: minzoom
+    minZoom: minzoom2
 });
 
 
@@ -395,7 +257,7 @@ let geocoder2 = new MapboxGeocoder({
 
 map2.keyboard.disable();
 map2.scrollZoom.disable();
-map2.dragPan.disable();
+// map2.dragPan.disable();
 // map2.boxZoom.disable();
 
 if (utils.isMobile()) {
@@ -431,25 +293,28 @@ map2.on('load', function() {
                 ['linear'],
                 ['get', 'results_KLOBUCHAR_PCT'],
                 0,
-                '#DAE1E7',
+                '#ffffff',
                 0.1,
-                '#C6D1D9',
+                '#DAE1E7',
                 0.2,
-                '#A8B9C5',
+                '#C6D1D9',
                 0.3,
-                '#7F98AA',
+                '#A8B9C5',
                 0.4,
-                '#556E7F',
+                '#7F98AA',
                 0.5,
+                '#556E7F',
+                0.6,
                 '#2C3942'
             ],
             'fill-opacity': 0.75,
             'fill-antialias': true,
-            'fill-outline-color': '#ffffff'
+            'fill-outline-color': '#333333'
         }
     }, 'settlement-label');
 
 
+if ($("#mainslide").width() > 520) {
     map2.addLayer({
       'id': 'precincts-highlighted2',
       'type': 'fill',
@@ -483,7 +348,15 @@ map2.on('load', function() {
 
         var feature = features[0];
 
-        var description = "<div>" + feature.properties.NAME + "</div><div>" + d3.format(".0%")(feature.properties.results_KLOBUCHAR_PCT) + "</div><div>Total votes: " + d3.format(",")(feature.properties.results_TOTAL_VOTES) + "</div>";
+        var description = "<div class='tipmame'>" + feature.properties.NAME + "</div> \
+        <div class='line'> \
+            <div class='type'>Klobuchar</div>\
+            <div class='num'>" + d3.format(".0%")(feature.properties.results_KLOBUCHAR_PCT) + "</div> \
+        </div> \
+        <div class='line'> \
+            <div class='type'>Total</div>\
+            <div class='num'>" + d3.format(",")(feature.properties.results_TOTAL_VOTES) + "</div> \
+        </div>";
 
         // Populate the popup and set its coordinates
         // based on the feature found.
@@ -491,6 +364,7 @@ map2.on('load', function() {
             .setHTML(description)
             .addTo(map2);
     });
+}
 
 
 });
@@ -503,23 +377,19 @@ $(document).ready(function() {
         map.flyTo({
             center: centerM,
             zoom: zoomM,
-            minZoom: zoomM
         });
         map2.flyTo({
             center: centerM,
             zoom: zoomM,
-            minZoom: zoomM
         });
     } else {
         map.flyTo({
             center: centerD,
             zoom: zoom1,
-            minZoom: zoom1
         });
         map2.flyTo({
             center: centerD,
             zoom: zoom2,
-            minZoom: zoom2
         });
     }
 
@@ -528,23 +398,19 @@ $(document).ready(function() {
             map.flyTo({
                 center: centerM,
                 zoom: zoomM,
-                minZoom: zoomM
             });
             map2.flyTo({
                 center: centerM,
                 zoom: zoomM,
-                minZoom: zoomM
             });
         } else {
             map.flyTo({
                 center: centerD,
                 zoom: zoom1,
-                minZoom: zoom1
             });
             map2.flyTo({
                 center: centerD,
                 zoom: zoom2,
-                minZoom: zoom2
             });
         }
     });
@@ -552,11 +418,11 @@ $(document).ready(function() {
     $(".reset").on("click", function() {
         map.flyTo({
             center: centerD,
-            zoom: zoom1
+            zoom: minzoom1
         });
         map2.flyTo({
           center: centerD,
-          zoom: zoom2
+          zoom: minzoom2
       });
         $('.mapboxgl-ctrl-geocoder--input').val('');
         $('.mapboxgl-marker').hide();

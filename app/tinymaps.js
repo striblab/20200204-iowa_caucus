@@ -14,7 +14,7 @@ class Map {
         this.g = this.svg.append("g");
         this.zoomed = false;
         this.scaled = $(target).width() / 520;
-        this.colorScale = ['#8CBF82','#DEA381','#80ADAD','#7D739C','#F2614C','#636363','#969696','#969696','#969696','#969696','#969696','#969696']
+        this.colorScale = ['#8CBF82','#415B46','#80ADAD','#7D739C','#379B9B','#252525','#252525','#969696','#969696','#969696','#969696','#969696']
     }
 
     /********** PRIVATE METHODS **********/
@@ -38,10 +38,14 @@ class Map {
 
         var projection = d3.geoAlbers().scale(7337).translate([-50, 700]);
 
-
         var width = $(self.target).outerWidth();
         var height = $(self.target).outerHeight();
         var centered;
+
+        // var projection = d3.geoMercator()
+        // // .center([42.074622,-93.500036])
+        // .scale(5000)
+        // // .translate([width / 2, height / 2])
 
         var path = d3.geoPath(projection);
 
@@ -149,6 +153,31 @@ class Map {
                 return "<div class='countyName'>" + d.properties.NAMELSAD + "</div>";
               }));
 
+              var marks = [{
+                long: -93.616230,
+                lat: 41.589138,
+                name: "• Des Moines"
+            }, {
+                long: -91.669393,
+                lat: 41.977653,
+                name: "• Cedar Rapids"
+            }];
+
+
+            self.g.append('g').attr('class', 'labels').selectAll("text")
+            .data(marks)
+            .enter()
+            .append("text")
+            .attr('class', function(d) {
+                return 'city-label ' + d.name;
+            })
+            .attr("transform", function(d) {
+              return "translate(" + projection([d.long, d.lat]) + ")";
+            })
+            // .style("opacity",0)
+            .text(function(d) {
+                return " " + d.name;
+            });
 
         var aspect = 500 / 300,
             chart = $(self.target + " svg");

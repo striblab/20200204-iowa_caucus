@@ -39,18 +39,69 @@ $selector-wrapper: '.strib-styles.ssa.ssb.ssc';
   height:250px;
   margin-bottom:25px;
   text-align:center;
+  margin-top:45px;
+}
+
+.geocoder {
+  display:none !important;
 }
 
 .canLabel {
   text-align:center;
   font-weight:bold;
   font-size:0.9em;
-  color:#ffffff;
   border-radius: 5px;
   padding: 0 7px;
   margin-bottom: 3px;
   font-family: "Benton Sans", Helvetica, Arial, sans-serif !important;
+}
 
+.legend {
+  font-size:0.6em;
+}
+
+#mainlegend {
+  margin-top:25px;
+  font-size:0.8em;
+  font-weight:bold;
+}
+
+.legend div {
+  height:10px;
+  width:40px;
+  display:inline-block;
+}
+
+.label {
+  font-weight:bold;
+  font-size:0.8em;
+  }
+
+  .city-label {
+		font-size: 1em;
+		fill: white;
+		font-family: "Benton Sans";
+		text-shadow: 1px 0 5px black;
+    pointer-events:none;
+  }
+
+
+.line {
+   font-size:0.8em;
+} 
+
+.line div {
+  display:inline-block;
+  clear:both;
+  width:40px;
+}
+
+.num {
+  text-align:right;
+}
+
+.tipname {
+  font-size:0.8em;
 }
 
 .tooltip {

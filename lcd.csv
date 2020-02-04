@@ -1,0 +1,411 @@
+label,content
+content," <div class=""strib-styles ssa ssb ssc"">
+  <section class=""container-lg elex-header"">
+    <h5 class=""font-popular-light""><span class=""font-popular-medium"">Election 2020</span></h5>
+      <h1>How Amy Klobuchar performed at the Iowa Caucus</h1>
+    <div class=""byline"">
+      <address>By
+        <a rel=""author"" href=""http://www.startribune.com/jeff-hargarten/274254381/"">Jeff Hargarten</a>
+      </address>
+      <span class=""spacer""></span>
+      Star Tribune
+      <span class=""spacer-alt""></span>
+      <time pubdate datetime=""2019-11-11T16:00:00"">February 4, 2020</time>
+    </div>
+    <p></p>
+    <!-- share -->
+  </section>
+  
+
+  <section class=""container-lg"">
+    <p>Sen. Amy Klobuchar's campaign to convince Iowa's caucus voters of her presidential viability ended in TK results on Monday night.</p>
+
+    <p>Klobuchar was allocated TK pledged delegates, finishing TK behind TK and TK.</p>
+
+    <p>Despiting visit all 99 counties in Iowa, Klobuchar's support was strongest in the TK and TK parts of the state, which is more plainly revealed through precinct-level maps of the caucus results.</p>
+
+    </section>
+
+    <div class=""slide"" id=""mainslide"">
+
+
+  <div class=""map"" id=""map2"">
+    <div class=""reset"">Reset</div>
+  </div>
+  <div id=""geocoder2"" class=""geocoder""></div>
+  <div id=""mainlegend"">Vote percentage</div>
+  <div class=""legend""><div class=""white"">0%</div><div class=""blue1""></div><div class=""blue2""></div><div class=""blue3""></div><div class=""blue4""></div><div class=""blue5""></div><div class=""white"">50%+</div></div>
+  </div>
+
+
+  <section class=""container-lg"">
+    <p> </p>
+      <p>When including all her rivals, Klobuchar's support gets mostly washed out amid strong performances by TK, TK and TK, with only the TK parts of the state still tilting in her direction.</p>
+
+      <p>The map below shows how each Iowa precinct aligned after the second ballot, with all candidates included.</p>
+
+      <p>Next month, on March 3, Klobuchar's constituents in Minnesota vote along with several other states in Super Tuesday primary contests.</p>
+
+      </section>
+
+      <div class=""slide"" id=""mainslide"">
+
+        <div class=""map"" id=""map"">
+          <div class=""reset"">Reset</div>
+        </div>
+        <div id=""geocoder"" class=""geocoder""></div>
+  </div>
+
+  <div class=""slide"">
+      <div class=""contest-table"">
+        <table>
+          <thead>
+            <tr><th></th>
+            <th class=""cand"">Candidate</th>
+            <th class=""DELEGATES"">DELEGATES</th>
+            <th class=""votes"">votes</th>
+            <th class=""pct"">PCT</th>
+            <th class=""bar""></th></tr></thead>
+  
+            <tbody>
+                <tr class=""party-dem5 winner"" title=""party"">
+                    <td class=""winner"" title="""">
+                        <span class=""check"">✓</span>
+                      </td>
+                    <td class=""cand"">
+                      <span class=""first"">Amy </span>Klobuchar
+                      <span class=""party-label""></span>
+                    </td>
+                    <td class=""delegates""><span>0</span></td>
+                    <td class=""votes""><span>0</span></td>
+                    <td class=""pct""><span class=""num"">0%</span></td>
+                    <td class=""bar"" title=""party"">
+                      <span class=""pctBar"" style=""width: 0%;""></span>
+                    </td>
+                </tr>
+  
+              <tr class=""party-dem1"" title=""party"">
+                <td title=""party"">
+                  <span class=""candidate-color-label"" title=""party""></span>
+                </td>
+                <td class=""cand"">
+                  <span class=""first"">Elizabeth </span>Warren
+                  <span class=""party-label""></span>
+                </td>
+                <td class=""delegates""><span>0</span></td>
+                <td class=""votes""><span>0</span></td>
+                <td class=""pct""><span class=""num"">0%</span></td>
+                <td class=""bar"" title=""party"">
+                  <span class=""pctBar"" style=""width: 0%;""></span>
+                </td>
+            </tr>
+
+            <tr class=""party-dem3"" title=""party"">
+              <td title=""party"">
+                <span class=""candidate-color-label"" title=""party""></span>
+              </td>
+              <td class=""cand"">
+                <span class=""first"">Bernie </span>Sanders
+                <span class=""party-label""></span>
+              </td>
+              <td class=""delegates""><span>0</span></td>
+              <td class=""votes""><span>0</span></td>
+              <td class=""pct""><span class=""num"">0%</span></td>
+              <td class=""bar"" title=""party"">
+                <span class=""pctBar"" style=""width: 0%;""></span>
+              </td>
+          </tr>
+
+          <tr class=""party-dem2"" title=""party"">
+            <td title=""party"">
+              <span class=""candidate-color-label"" title=""party""></span>
+            </td>
+            <td class=""cand"">
+              <span class=""first"">Joe </span>Biden
+              <span class=""party-label""></span>
+            </td>
+            <td class=""delegates""><span>0</span></td>
+            <td class=""votes""><span>0</span></td>
+            <td class=""pct""><span class=""num"">0%</span></td>
+            <td class=""bar"" title=""party"">
+              <span class=""pctBar"" style=""width: 0%;""></span>
+            </td>
+        </tr>
+
+        <tr class=""party-dem4"" title=""party"">
+          <td title=""party"">
+            <span class=""candidate-color-label"" title=""party""></span>
+          </td>
+          <td class=""cand"">
+            <span class=""first"">Pete </span>Buttigieg
+            <span class=""party-label""></span>
+          </td>
+          <td class=""delegates""><span>0</span></td>
+          <td class=""votes""><span>0</span></td>
+          <td class=""pct""><span class=""num"">0%</span></td>
+          <td class=""bar"" title=""party"">
+            <span class=""pctBar"" style=""width: 0%;""></span>
+          </td>
+      </tr>
+
+      <tr class=""party-null"" title=""party"">
+        <td title=""party"">
+          <span class=""candidate-color-label"" title=""party""></span>
+        </td>
+        <td class=""cand"">
+          <span class=""first"">Deval </span>Patrick
+          <span class=""party-label""></span>
+        </td>
+        <td class=""delegates""><span>0</span></td>
+        <td class=""votes""><span>0</span></td>
+        <td class=""pct""><span class=""num"">0%</span></td>
+        <td class=""bar"" title=""party"">
+          <span class=""pctBar"" style=""width: 0%;""></span>
+        </td>
+    </tr>
+
+    <tr class=""party-null"" title=""party"">
+      <td title=""party"">
+        <span class=""candidate-color-label"" title=""party""></span>
+      </td>
+      <td class=""cand"">
+        <span class=""first"">Michael </span>Bloomberg
+        <span class=""party-label""></span>
+      </td>
+      <td class=""delegates""><span>0</span></td>
+      <td class=""votes""><span>0</span></td>
+      <td class=""pct""><span class=""num"">0%</span></td>
+      <td class=""bar"" title=""party"">
+        <span class=""pctBar"" style=""width: 0%;""></span>
+      </td>
+  </tr>
+
+  <tr class=""party-null"" title=""party"">
+    <td title=""party"">
+      <span class=""candidate-color-label"" title=""party""></span>
+    </td>
+    <td class=""cand"">
+      <span class=""first"">Tom </span>Steyer
+      <span class=""party-label""></span>
+    </td>
+    <td class=""delegates""><span>0</span></td>
+    <td class=""votes""><span>0</span></td>
+    <td class=""pct""><span class=""num"">0%</span></td>
+    <td class=""bar"" title=""party"">
+      <span class=""pctBar"" style=""width: 0%;""></span>
+    </td>
+</tr>
+
+
+<tr class=""party-null"" title=""party"">
+  <td title=""party"">
+    <span class=""candidate-color-label"" title=""party""></span>
+  </td>
+  <td class=""cand"">
+    <span class=""first"">Andrew </span>Yang
+    <span class=""party-label""></span>
+  </td>
+  <td class=""delegates""><span>0</span></td>
+  <td class=""votes""><span>0</span></td>
+  <td class=""pct""><span class=""num"">0%</span></td>
+  <td class=""bar"" title=""party"">
+    <span class=""pctBar"" style=""width: 0%;""></span>
+  </td>
+</tr>
+
+<tr class=""party-null"" title=""party"">
+  <td title=""party"">
+    <span class=""candidate-color-label"" title=""party""></span>
+  </td>
+  <td class=""cand"">
+    <span class=""first"">John </span>Delaney
+    <span class=""party-label""></span>
+  </td>
+  <td class=""delegates""><span>0</span></td>
+  <td class=""votes""><span>0</span></td>
+  <td class=""pct""><span class=""num"">0%</span></td>
+  <td class=""bar"" title=""party"">
+    <span class=""pctBar"" style=""width: 0%;""></span>
+  </td>
+</tr>
+
+
+<tr class=""party-null"" title=""party"">
+  <td title=""party"">
+    <span class=""candidate-color-label"" title=""party""></span>
+  </td>
+  <td class=""cand"">
+    <span class=""first"">Tulsi </span>Gabbard
+    <span class=""party-label""></span>
+  </td>
+  <td class=""delegates""><span>0</span></td>
+  <td class=""votes""><span>0</span></td>
+  <td class=""pct""><span class=""num"">0%</span></td>
+  <td class=""bar"" title=""party"">
+    <span class=""pctBar"" style=""width: 0%;""></span>
+  </td>
+</tr>
+
+
+<tr class=""party-null"" title=""party"">
+  <td title=""party"">
+    <span class=""candidate-color-label"" title=""party""></span>
+  </td>
+  <td class=""cand"">
+    <span class=""first"">Michael </span>Bennet
+    <span class=""party-label""></span>
+  </td>
+  <td class=""delegates""><span>0</span></td>
+  <td class=""votes""><span>0</span></td>
+  <td class=""pct""><span class=""num"">0%</span></td>
+  <td class=""bar"" title=""party"">
+    <span class=""pctBar"" style=""width: 0%;""></span>
+  </td>
+</tr>
+
+
+<tr class=""party-null"" title=""party"">
+  <td title=""party"">
+    <span class=""candidate-color-label"" title=""party""></span>
+  </td>
+  <td class=""cand"">
+    <span class=""first"">Other </span>
+    <span class=""party-label""></span>
+  </td>
+  <td class=""delegates""><span>0</span></td>
+  <td class=""votes""><span>0</span></td>
+  <td class=""pct""><span class=""num"">0%</span></td>
+  <td class=""bar"" title=""party"">
+    <span class=""pctBar"" style=""width: 0%;""></span>
+  </td>
+</tr>
+
+
+<tr class=""party-null"" title=""party"">
+  <td title=""party"">
+    <span class=""candidate-color-label"" title=""party""></span>
+  </td>
+  <td class=""cand"">
+    <span class=""first"">Uncommitted </span>
+    <span class=""party-label""></span>
+  </td>
+  <td class=""delegates""><span>0</span></td>
+  <td class=""votes""><span>0</span></td>
+  <td class=""pct""><span class=""num"">0%</span></td>
+  <td class=""bar"" title=""party"">
+    <span class=""pctBar"" style=""width: 0%;""></span>
+  </td>
+</tr>
+            </tbody>
+        </table>
+  </div>
+    </div>
+
+
+      <section class=""container-lg"">
+      <p>On a county level, comparing Klobuchar's strength to that of other candidates reveals varied patterns of voter preference across the state of Iowa. Whereas Klobuchar performed best in TK and TK parts of Iowa, her closest rivals beat her out in TK.</p>
+
+    </section>
+
+
+    <div class=""slide"" id=""spill"">
+
+      <div id=""canContain"">
+        <div class=""canBlock"">
+          <div class=""canLabel"">Bernie Sanders</div>
+          <div class=""tinymap"" id=""tinymap0""><svg width=""300"" height=""200"" viewbox=""0 0 500 550"" preserveaspectratio=""xMidYMid""></svg></div>
+          <div class=""legend"">
+            <div class=""white"">0%</div><div class=""green1""></div><div class=""green2""></div><div class=""green3""></div><div class=""green4""></div><div class=""green5""></div><div class=""white"">50%+</div>
+          </div>
+        </div>
+
+        <div class=""canBlock"">
+            <div class=""canLabel"">Joe Biden</div>
+            <div class=""tinymap"" id=""tinymap1""><svg width=""300"" height=""200"" viewbox=""0 0 500 550"" preserveaspectratio=""xMidYMid""></svg></div>
+            <div class=""legend""><div class=""white"">0%</div><div class=""orange1""></div><div class=""orange2""></div><div class=""orange3""></div><div class=""orange4""></div><div class=""orange5""></div><div class=""white"">50%+</div></div>
+        </div>
+
+        <div class=""canBlock"">
+          <div class=""canLabel"">Amy Klobuchar</div>
+          <div class=""tinymap"" id=""tinymap2""><svg width=""300"" height=""200"" viewbox=""0 0 500 550"" preserveaspectratio=""xMidYMid""></svg></div>
+          <div class=""legend""><div class=""white"">0%</div><div class=""blue1""></div><div class=""blue2""></div><div class=""blue3""></div><div class=""blue4""></div><div class=""blue5""></div><div class=""white"">50%+</div></div>
+        </div>
+
+        <div class=""canBlock"">
+            <div class=""canLabel"">Elizabeth Warren</div>
+            <div class=""tinymap"" id=""tinymap3""><svg width=""300"" height=""200"" viewbox=""0 0 500 550"" preserveaspectratio=""xMidYMid""></svg></div>
+            <div class=""legend""><div class=""white"">0%</div><div class=""purple1""></div><div class=""purple2""></div><div class=""purple3""></div><div class=""purple4""></div><div class=""purple5""></div><div class=""white"">50%+</div></div>
+        </div>
+
+        <div class=""canBlock"">
+            <div class=""canLabel"">Pete Buttigieg</div>
+            <div class=""tinymap"" id=""tinymap4""><svg width=""300"" height=""200"" viewbox=""0 0 500 550"" preserveaspectratio=""xMidYMid""></svg></div>
+            <div class=""legend""><div class=""white"">0%</div><div class=""red1""></div><div class=""red2""></div><div class=""red3""></div><div class=""red4""></div><div class=""red5""></div><div class=""white"">50%+</div></div>
+        </div>
+
+        <div class=""canBlock "">
+            <div class=""canLabel"">Andrew Yang</div>
+            <div class=""tinymap"" id=""tinymap6""><svg width=""300"" height=""200"" viewbox=""0 0 500 550"" preserveaspectratio=""xMidYMid""></svg></div>
+            <div class=""legend""><div class=""white"">0%</div><div class=""gray1""></div><div class=""gray2""></div><div class=""gray3""></div><div class=""gray4""></div><div class=""gray5""></div><div class=""white"">50%+</div></div>
+          </div>
+
+        <div class=""canBlock"">
+            <div class=""canLabel"">Tom Steyer</div>
+            <div class=""tinymap"" id=""tinymap5""><svg width=""300"" height=""200"" viewbox=""0 0 500 550"" preserveaspectratio=""xMidYMid""></svg></div>
+            <div class=""legend""><div class=""white"">0%</div><div class=""gray1""></div><div class=""gray2""></div><div class=""gray3""></div><div class=""gray4""></div><div class=""gray5""></div><div class=""white"">50%+</div></div>     
+          </div>
+
+        <div class=""canBlock"">
+            <div class=""canLabel"">Michael Bloomberg</div>
+            <div class=""tinymap"" id=""tinymap7""><svg width=""300"" height=""200"" viewbox=""0 0 500 550"" preserveaspectratio=""xMidYMid""></svg></div>
+            <div class=""legend""><div class=""white"">0%</div><div class=""gray1""></div><div class=""gray2""></div><div class=""gray3""></div><div class=""gray4""></div><div class=""gray5""></div><div class=""white"">50%+</div></div>        
+          </div>
+
+        <div class=""canBlock"">
+            <div class=""canLabel"">Deval Patrick</div>
+            <div class=""tinymap"" id=""tinymap8""><svg width=""300"" height=""200"" viewbox=""0 0 500 550"" preserveaspectratio=""xMidYMid""></svg></div>
+            <div class=""legend""><div class=""white"">0%</div><div class=""gray1""></div><div class=""gray2""></div><div class=""gray3""></div><div class=""gray4""></div><div class=""gray5""></div><div class=""white"">50%+</div></div>        
+          </div>
+
+        <div class=""canBlock"">
+            <div class=""canLabel"">Tulsi Gabbard</div>
+            <div class=""tinymap"" id=""tinymap9""><svg width=""300"" height=""200"" viewbox=""0 0 500 550"" preserveaspectratio=""xMidYMid""></svg></div>
+            <div class=""legend""><div class=""white"">0%</div><div class=""gray1""></div><div class=""gray2""></div><div class=""gray3""></div><div class=""gray4""></div><div class=""gray5""></div><div class=""white"">50%+</div></div>        
+          </div>
+
+        <div class=""canBlock"">
+            <div class=""canLabel"">Michael Bennet</div>
+            <div class=""tinymap"" id=""tinymap10""><svg width=""300"" height=""200"" viewbox=""0 0 500 550"" preserveaspectratio=""xMidYMid""></svg></div>
+            <div class=""legend""><div class=""white"">0%</div><div class=""gray1""></div><div class=""gray2""></div><div class=""gray3""></div><div class=""gray4""></div><div class=""gray5""></div><div class=""white"">50%+</div></div>
+        </div>
+
+        <div class=""canBlock"">
+            <div class=""canLabel"">John Delaney</div>
+            <div class=""tinymap"" id=""tinymap11""><svg width=""300"" height=""200"" viewbox=""0 0 500 550"" preserveaspectratio=""xMidYMid""></svg></div>
+            <div class=""legend""><div class=""white"">0%</div><div class=""gray1""></div><div class=""gray2""></div><div class=""gray3""></div><div class=""gray4""></div><div class=""gray5""></div><div class=""white"">50%+</div></div>
+        </div>
+      </div>
+    </div>
+    
+<div class=""slide""><p><span class=""byline"">Data source: Iowa Democratic Party, Iowa Secretary of State</span></p>
+</div>
+
+<section class=""container-lg"">
+
+    <div class=""article-author-contact"">
+      <div class=""article-author-hcard"">
+          <p></p><p><span style=""font-size: 10pt; font-family: Arial;""><strong>Jeff Hargarten </strong>is a data journalist for the Star Tribune focusing on data-driven reporting and visualization. He has covered elections, technology, criminal justice, demographics and public health.</span></p><p></p>
+          <p><a class=""article-author-hcard__email"" target=""_blank"" href=""mailto:Jeff.Hargarten@startribune.com?subject=How Amy Klobuchar performed at the Iowa Caucus9"" data-linkname=""Jeff.Hargarten@startribune.com"" data-linktype=""email"" data-modulename=""Article"" data-moduletype=""zone1-content"" data-position=""0-1-author"">Jeff.Hargarten@startribune.com</a>
+          <a class=""article-author-hcard__phone"" href=""tel:612-673-4642"" data-linkname=""612-673-4642"" data-linktype=""phone"" data-modulename=""Article"" data-moduletype=""zone1-content"" data-position=""0-1-author"">612-673-4642</a>
+          <a class=""article-author-hcard__twitter"" href=""http://twitter.com/JeffHargarten"" target=""_blank"" data-linkname=""JeffHargarten"" data-linktype=""twitter"" data-modulename=""Article"" data-moduletype=""zone1-content"" data-position=""0-1-author"">JeffHargarten</a></p>
+    </div>
+  </div>
+</section>
+</div>"
+scripts,news/projects/all/20200204-iowa-caucus/js/index.bundle.js
+styles,news/projects/all/20200204-iowa-caucus/styles/index.bundle.css
+script libraries,"<script src=""https://cdn.polyfill.io/v2/polyfill.min.js""></script>
+<script src=""https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js""></script>
+<script src=""https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js""></script>
+<script src=""https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js""></script>"
+style libraries,
