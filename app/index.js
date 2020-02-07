@@ -32,7 +32,6 @@ utils.documentReady(() => {
 
 
 import Map from './tinymaps.js';
-import * as d3 from 'd3';
 import iowa from '../sources/iowa_pct_small.json';
 
 
@@ -291,20 +290,20 @@ map2.on('load', function() {
             'fill-color': [
                 'interpolate',
                 ['linear'],
-                ['get', 'results_KLOBUCHAR_PCT'],
+                ['get', 'results_KLOBUCHAR'],
                 0,
                 '#ffffff',
-                0.1,
-                '#DAE1E7',
                 0.2,
-                '#C6D1D9',
-                0.3,
-                '#A8B9C5',
+                '#DAE1E7',
                 0.4,
-                '#7F98AA',
-                0.5,
-                '#556E7F',
+                '#C6D1D9',
                 0.6,
+                '#A8B9C5',
+                0.8,
+                '#7F98AA',
+                1,
+                '#556E7F',
+                1.1,
                 '#2C3942'
             ],
             'fill-opacity': 0.75,
