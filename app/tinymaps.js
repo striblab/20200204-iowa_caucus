@@ -131,17 +131,17 @@ class Map {
                 return "P" + d.properties.COUNTYFP;
             })
             .style("stroke-width", '1')
-            .style("stroke", "#ffffff")
+            .style("stroke", "#333333")
             .style("fill", function(d) {
 
                 var colorGradient = d3.scaleLinear()
-                .domain([0, 1])
+                .domain([0, 100])
                 .range(['#ffffff',self.colorScale[self.candidate]]);
                 
                 for (var i=0; i < countyData.length; i++){
                     var resultsGradient = [countyData[i].SANDERS_PCT,countyData[i].BIDEN_PCT,countyData[i].KLOBUCHAR_PCT,countyData[i].WARREN_PCT,countyData[i].BUTTIGIEG_PCT,countyData[i].YANG_PCT,countyData[i].STEYER_PCT,countyData[i].BLOOMBERG_PCT,countyData[i].PATRICK_PCT,countyData[i].GABBARD_PCT,countyData[i].BENNET_PCT,countyData[i].DELANEY_PCT]
 
-                    if (countyData[i].COUNTYNS == d.properties.COUNTYNS) {
+                    if (countyData[i].county == d.properties.NAME) {
                         return colorGradient(resultsGradient[self.candidate]);
                     }
 
