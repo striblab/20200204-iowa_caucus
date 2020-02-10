@@ -292,3 +292,9 @@ $selector-wrapper: '.strib-styles.ssa.ssb.ssc';
 .red {
   background-image: linear-gradient(to right, white , #C0272D);
 }
+
+@media (max-width:800px) {
+  .pullout {
+      width:100% !important;
+  }
+}
