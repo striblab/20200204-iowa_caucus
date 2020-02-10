@@ -38,6 +38,10 @@ $selector-wrapper: '.strib-styles.ssa.ssb.ssc';
   display:none;
 }
 
+.map:hover {
+  cursor:grab !important;
+}
+
 .pullout {
   margin-left:auto;
   margin-right:auto;
@@ -186,14 +190,27 @@ $selector-wrapper: '.strib-styles.ssa.ssb.ssc';
   
 
 #map {
-  width:800px;
-  height:600px;
+  width:520px;
+  height:400px;
   margin-right:auto;
   margin-left:auto;
   display:inline-block;
   text-align:center;
   vertical-align:top;
   position:relative;
+  pointer-events:none !important;
+ }
+
+ #map3 {
+  width:520px;
+  height:400px;
+  margin-right:auto;
+  margin-left:auto;
+  display:inline-block;
+  text-align:center;
+  vertical-align:top;
+  position:relative;
+  pointer-events:none !important;
  }
 
  #map2 {
@@ -228,13 +245,6 @@ $selector-wrapper: '.strib-styles.ssa.ssb.ssc';
     line-height: 20px;
     width:100% !important;
     max-width: 100%  !important;
-}
-
-.reset {
-  z-index:1;
-  position:absolute;
-  bottom:3px;
-  right:3px;
 }
 
 .reset:hover {

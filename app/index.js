@@ -45,10 +45,10 @@ var zoomM = 5.6;
 
 
 if ($("#mainslide").width() < 520) {
-    // var minzoom1 = zoomM;
+    var minzoom1 = zoomM;
     var minzoom2 = zoomM;
 } else {
-    // var minzoom1 = zoom1;
+    var minzoom1 = zoom1;
     var minzoom2 = zoom2;
 }
 
@@ -64,162 +64,128 @@ const colors = ['#8CBF82','#415B46','#80ADAD','#7D739C','#379B9B','#252525','#25
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3RhcnRyaWJ1bmUiLCJhIjoiY2sxYjRnNjdqMGtjOTNjcGY1cHJmZDBoMiJ9.St9lE8qlWR5jIjkPYd3Wqw';
 
-// const map = new mapboxgl.Map({
-//     container: 'map',
-//     style: 'mapbox://styles/startribune/ck1b7427307bv1dsaq4f8aa5h',
-//     center: centerD,
-//     zoom: zoom1,
-//     minZoom: minzoom1
-// });
+const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/startribune/ck1b7427307bv1dsaq4f8aa5h',
+    center: [-93.624962,41.586834],
+    zoom: 9.8,
+    minZoom: minzoom1
+});
+
+map.keyboard.disable();
+map.scrollZoom.disable();
+map.dragPan.disable();
+map.boxZoom.disable();
+
+if (utils.isMobile()) {
+    map.dragRotate.disable();
+    map.touchZoomRotate.disableRotation();
+} else {
+    map.getCanvas().style.cursor = 'grab';
+}
+
+map.on('load', function() {
+
+    map.addSource('iowa', {
+        type: 'geojson',
+        data: iowa
+    });
+
+    map.addLayer({
+        'id': 'iowa-layer2',
+        'interactive': true,
+        'source': 'iowa',
+        'layout': {},
+        'type': 'fill',
+        'paint': {
+            'fill-color': [
+                'interpolate',
+                ['linear'],
+                ['get', 'results_KLOBUCHAR'],
+                0,
+                '#f7f7f7',
+                0.2,
+                '#DAE1E7',
+                0.4,
+                '#C6D1D9',
+                0.6,
+                '#A8B9C5',
+                0.8,
+                '#7F98AA',
+                1,
+                '#556E7F',
+                2,
+                '#2C3942'
+            ],
+            'fill-opacity': 0.75,
+            'fill-antialias': true,
+            'fill-outline-color': '#333333'
+        }
+    }, 'settlement-label');
+
+});
 
 
+const map3 = new mapboxgl.Map({
+    container: 'map3',
+    style: 'mapbox://styles/startribune/ck1b7427307bv1dsaq4f8aa5h',
+    center: [-93.616905,42.026373],
+    zoom: 11.3,
+    minZoom: minzoom1
+});
 
-// let geocoder = new MapboxGeocoder({
-//     accessToken: mapboxgl.accessToken,
-//     countries: 'us',
-//     filter: function(item) {
-//         return item.context
-//             .map(function(i) {
-//                 return (
-//                     i.id.split('.').shift() === 'region' &&
-//                     i.text === 'Iowa'
-//                 );
-//             })
-//             .reduce(function(acc, cur) {
-//                 return acc || cur;
-//             });
-//     },
-//     marker: {
-//         color: 'gray'
-//     },
-//     placeholder: "Search for an address",
-//     mapboxgl: mapboxgl
-// });
+map3.keyboard.disable();
+map3.scrollZoom.disable();
+map3.dragPan.disable();
+map3.boxZoom.disable();
 
-// map.keyboard.disable();
-// map.scrollZoom.disable();
-// // map.dragPan.disable();
-// // map.boxZoom.disable();
+if (utils.isMobile()) {
+    map3.dragRotate.disable();
+    map3.touchZoomRotate.disableRotation();
+} else {
+    map3.getCanvas().style.cursor = 'grab';
+}
 
-// if (utils.isMobile()) {
-//     map.dragRotate.disable();
-//     map.touchZoomRotate.disableRotation();
-// } else {
-//     map.getCanvas().style.cursor = 'pointer';
-//     map.addControl(new mapboxgl.NavigationControl({
-//         showCompass: false
-//     }));
-// }
+map3.on('load', function() {
 
-// document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+    map3.addSource('iowa', {
+        type: 'geojson',
+        data: iowa
+    });
 
+    map3.addLayer({
+        'id': 'iowa-layer2',
+        'interactive': true,
+        'source': 'iowa',
+        'layout': {},
+        'type': 'fill',
+        'paint': {
+            'fill-color': [
+                'interpolate',
+                ['linear'],
+                ['get', 'results_KLOBUCHAR'],
+                0,
+                '#f7f7f7',
+                0.2,
+                '#DAE1E7',
+                0.4,
+                '#C6D1D9',
+                0.6,
+                '#A8B9C5',
+                0.8,
+                '#7F98AA',
+                1,
+                '#556E7F',
+                2,
+                '#2C3942'
+            ],
+            'fill-opacity': 0.75,
+            'fill-antialias': true,
+            'fill-outline-color': '#333333'
+        }
+    }, 'settlement-label');
 
-// map.on('load', function() {
-
-//     var canvas = map.getCanvasContainer();
-//     var start;
-//     var current;
-//     var box;
-
-//     var popup = new mapboxgl.Popup({
-//         closeButton: false,
-//         closeOnClick: false
-//     });
-
-
-//     map.addSource('iowa', {
-//         type: 'geojson',
-//         data: iowa
-//     });
-
-//     map.addLayer({
-//         'id': 'iowa-layer1',
-//         'interactive': true,
-//         'source': 'iowa',
-//         'layout': {},
-//         'type': 'fill',
-//         'paint': {
-//             'fill-color': [
-//                 'match',
-//                 ['get', 'results_WINNER'],
-//                 candidates[0],
-//                 colors[0],
-//                 candidates[1],
-//                 colors[1],
-//                 candidates[2],
-//                 colors[2],
-//                 candidates[3],
-//                 colors[3],
-//                 candidates[4],
-//                 colors[4],
-//                 candidates[5],
-//                 colors[5],
-//                 candidates[6],
-//                 colors[6],
-//                 candidates[7],
-//                 colors[7],
-//                 candidates[8],
-//                 colors[8],
-//                 candidates[9],
-//                 colors[9],
-//                 candidates[10],
-//                 colors[10],
-//                 candidates[11],
-//                 colors[11],
-//                 '#ffffff'
-//             ],
-//             'fill-opacity': 0.75,
-//             'fill-antialias': true,
-//             'fill-outline-color': '#333333'
-//         }
-//     }, 'settlement-label');
-
-// if ($("#mainslide").width() > 520) {
-//     map.addLayer({
-//         'id': 'precincts-highlighted1',
-//         'type': 'fill',
-//         'source': 'iowa',
-//         'paint': {
-//             'fill-outline-color': '#333333',
-//             'fill-color': 'rgba(0,0,0,0)',
-//             'fill-opacity': 1
-//         },
-//         // 'filter': ['in', 'DISTRICT', '']
-//     }, 'settlement-label');
-
-//     map.on('mousemove', function(e) {
-//         var features = map.queryRenderedFeatures(e.point, {
-//             layers: ['precincts-highlighted1']
-//         });
-//         // Change the cursor style as a UI indicator.
-//         map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
-
-//         if (!features.length) {
-//             popup.remove();
-//             return;
-//         }
-
-//         var feature = features[0];
-
-//         var description = "<div class='tipmame'>" + feature.properties.NAME + "</div> \
-//         <div class='line'> \
-//             <div class='type'>" + feature.properties.results_WINNER + "</div>\
-//             <div class='num'>" + d3.format(".0%")(feature.properties.results_WINNER_PCT) + "</div> \
-//         </div> \
-//         <div class='line'> \
-//             <div class='type'>Total</div>\
-//             <div class='num'>" + d3.format(",")(feature.properties.results_TOTAL_VOTES) + "</div> \
-//         </div>";
-
-//         // Populate the popup and set its coordinates
-//         // based on the feature found.
-//         popup.setLngLat(e.lngLat)
-//             .setHTML(description)
-//             .addTo(map);
-//     });
-// }
-
-// });
+});
 
 
 
@@ -263,7 +229,7 @@ if (utils.isMobile()) {
     map2.dragRotate.disable();
     map2.touchZoomRotate.disableRotation();
 } else {
-    map2.getCanvas().style.cursor = 'pointer';
+    map2.getCanvas().style.cursor = 'grab';
     map2.addControl(new mapboxgl.NavigationControl({
         showCompass: false
     }));
@@ -311,60 +277,6 @@ map2.on('load', function() {
             'fill-outline-color': '#333333'
         }
     }, 'settlement-label');
-
-
-// if ($("#mainslide").width() > 520) {
-//     map2.addLayer({
-//       'id': 'precincts-highlighted2',
-//       'type': 'fill',
-//       'source': 'iowa',
-//       'paint': {
-//           'fill-outline-color': '#333333',
-//           'fill-color': 'rgba(0,0,0,0)',
-//           'fill-opacity': 1
-//       },
-//       // 'filter': ['in', 'DISTRICT', '']
-//   }, 'settlement-label');
-
-
-
-//     var popup2 = new mapboxgl.Popup({
-//       closeButton: false,
-//       closeOnClick: false
-//     });
-
-//     map2.on('mousemove', function(e) {
-//         var features = map2.queryRenderedFeatures(e.point, {
-//             layers: ['precincts-highlighted2']
-//         });
-//         // Change the cursor style as a UI indicator.
-//         map2.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
-
-//         if (!features.length) {
-//             popup2.remove();
-//             return;
-//         }
-
-//         var feature = features[0];
-
-//         var description = "<div class='tipmame'>" + feature.properties.NAME + "</div> \
-//         <div class='line'> \
-//             <div class='type'>Klobuchar</div>\
-//             <div class='num'>" + d3.format(".0%")(feature.properties.results_KLOBUCHAR_PCT) + "</div> \
-//         </div> \
-//         <div class='line'> \
-//             <div class='type'>Total</div>\
-//             <div class='num'>" + d3.format(",")(feature.properties.results_TOTAL_VOTES) + "</div> \
-//         </div>";
-
-//         // Populate the popup and set its coordinates
-//         // based on the feature found.
-//         popup2.setLngLat(e.lngLat)
-//             .setHTML(description)
-//             .addTo(map2);
-//     });
-// }
-
 
 });
 
@@ -432,7 +344,9 @@ $(document).ready(function() {
         [-90.577042,41.523529],
         [-96.406441,42.496319],
         [-91.530128,41.661240],
-        [-92.332574,42.498837]];
+        [-92.332574,42.498837],
+        [-93.616905,42.026373],
+        [-95.851127,41.258081]];
 
     $(".reset").on("click", function() {
         // map.flyTo({
